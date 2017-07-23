@@ -14,20 +14,19 @@
 <meta name="author" content="panda" />
 
 
-    
-    
 
-
-<meta name="description" content="一个前端程序猿跳过的坑！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="panda的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="主要是基于IE6CSS样式的兼容和解决">
+<meta name="keywords" content="IECSS兼容处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IE6CSS兼容性问题的处理">
+<meta property="og:url" content="http://yoursite.com/2015/08/20/IE6CSS兼容性问题的处理/index.html">
 <meta property="og:site_name" content="panda的博客">
-<meta property="og:description" content="一个前端程序猿跳过的坑！">
+<meta property="og:description" content="主要是基于IE6CSS样式的兼容和解决">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-07-23T02:31:49.198Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="panda的博客">
-<meta name="twitter:description" content="一个前端程序猿跳过的坑！">
+<meta name="twitter:title" content="IE6CSS兼容性问题的处理">
+<meta name="twitter:description" content="主要是基于IE6CSS样式的兼容和解决">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,13 +54,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>panda的博客</title>
+<title>IE6CSS兼容性问题的处理 | panda的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -70,8 +67,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -265,9 +262,7 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-IE6CSS兼容性问题的处理" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-IE6CSS兼容性问题的处理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/08/20/IE6CSS兼容性问题的处理/" class="article-date">
@@ -285,108 +280,163 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/20/IE6CSS兼容性问题的处理/">IE6CSS兼容性问题的处理</a>
+    <h1 class="article-title" itemprop="name">
+      IE6CSS兼容性问题的处理
     </h1>
   
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="主要是基于IE6CSS样式的兼容和解决"><a href="#主要是基于IE6CSS样式的兼容和解决" class="headerlink" title="主要是基于IE6CSS样式的兼容和解决"></a>主要是基于IE6CSS样式的兼容和解决</h3>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+      <div class="article-info article-info-post">
+        
 
-      
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IECSS兼容处理/">IECSS兼容处理</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/2015/08/20/IE6CSS兼容性问题的处理/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-兼容代码" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/21/兼容代码/" class="article-date">
-      <time datetime="2015-07-21T11:42:01.000Z" itemprop="datePublished">2015-07-21</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/21/兼容代码/">解决简单的浏览器兼容问题 </a>
-    </h1>
-  
-
-      </header>
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h3 id="原生js兼容性"><a href="#原生js兼容性" class="headerlink" title="原生js兼容性"></a>原生js兼容性</h3><blockquote>
-<p>基本上好用的DOM操作或者语法 IE低版本浏览器都不兼容，作为前端最苦逼的就是解决各种浏览器的兼容问题，鉴于IE浏览器很严谨，<br>    很强大，在这分享几个常用的处理兼容性的方法<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+        <h3 id="主要是基于IE6CSS样式的兼容和解决"><a href="#主要是基于IE6CSS样式的兼容和解决" class="headerlink" title="主要是基于IE6CSS样式的兼容和解决"></a>主要是基于IE6CSS样式的兼容和解决</h3><a id="more"></a>
+<ul>
+<li>1、不同浏览器中标签默认的内外边距不同<blockquote>
+<p>问题描述：随便写几个标签，不加样式的情况下各自的margin和padding值有差异。<br>  解决办法：<br>  *{margin:0;padding:0;}<br>或<br>h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em,a,span,textarea,input{ margin:0;padding:0;}（建议使用）;</p>
+</blockquote>
+</li>
+<li>2、背景透明<blockquote>
+<p>问题描述：opacity在IE下无效。<br>  解决办法：非IE:opacity=.1;IE:filter: alpha(opacity=10);</p>
+</blockquote>
+</li>
+<li>3、子元素会继承透明属性<blockquote>
+<p>问题描述：父元素设置了透明度，则子元素也会透明。<br>  解决办法：非IE:background: rgba(0,0,0,0.6);IE:filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);<br>  rgba的透明值对应的IEfilter 可以简单百度一下网上很多；在这里就不贴出来了;</p>
+</blockquote>
+</li>
+<li>4、宽度解析不同<blockquote>
+<p>问题描述：在Ie6中width（宽度）包括padding，在其他浏览器中width不包括padding，<br>  解决办法：使用过滤器。<a href="http://blog.csdn.net/b1244154318/article/details/51925612" target="_blank" rel="external">http://blog.csdn.net/b1244154318/article/details/51925612</a></p>
+</blockquote>
+</li>
+<li><p>5、hack </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&gt; 样式后边加： </div><div class="line">    “-″减号是IE6专有的hack</div><div class="line">_background-color:#CDCDCD;/*ie6*/</div><div class="line">    “\9″ IE6/IE7/IE8/IE9/IE10都生效</div><div class="line">    “\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</div><div class="line">    “\9\0″ 只对IE9/IE10生效，是IE9/10的hack</div><div class="line">    加前缀：</div><div class="line">*html *前缀只对IE6生效</div><div class="line">*+html *+前缀只对IE7生效</div><div class="line">@media screen\9&#123;...&#125;只对IE6/7生效</div><div class="line">@media \0screen &#123;body &#123; background: red; &#125;&#125;只对IE8有效</div><div class="line">@media \0screen\,screen\9&#123;body &#123; background: blue; &#125;&#125;只对IE6/7/8有效</div><div class="line">@media screen\0 &#123;body &#123; background: green; &#125;&#125; 只对IE8/9/10有效</div><div class="line">@media screen and (min-width:0\0) &#123;body &#123; background: gray; &#125;&#125; 只对IE9/10有效</div><div class="line">@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) &#123;body &#123; background: orange; &#125;&#125; 只对IE10有效等等</div><div class="line">//----------------------</div><div class="line">//---------------------------------</div><div class="line">    浏览器优先级别:FF&lt;IE7&lt;IE6，CSS hack书写顺序一般为FF IE7 IE6</div><div class="line">以: " #demo &#123;width:100px;&#125; "为例;</div><div class="line">#demo &#123;width:100px;&#125; /*被FIREFOX,IE6,IE7执行.*/</div><div class="line">* html #demo &#123;width:120px;&#125; /*会被IE6执行,之前的定义会被后来的覆盖,所以#demo的宽度在IE6就为120px; */</div><div class="line">*+html #demo &#123;width:130px;&#125; /*会被IE7执行*/</div><div class="line">所以最后,#demo的宽度在三个浏览器的解释为: FIREFOX:100px; ie6:120px; ie7:130px;</div></pre></td></tr></table></figure>
+</li>
+<li><p>6、图片间隙</p>
+<blockquote>
+<p>问题描述：几个img标签放在一起的时候，会有默认的间距，即使清除了默认样式也不               起作用。（行内元素同理）<br>  解决办法：1、使用float属性为img布局<br>2、标签紧挨着写</p>
+<ul>
+<li>7、最大、最小宽、高问题<br>问题描述：IE不识别min-width、min-heigh、max-width、max-heigh<br> 解决办法： div{width: auto;height: auto;min-width: 200px;min-height: 200px;}<br><a href="http://www.divcss5.com/wenji/w194.shtml" target="_blank" rel="external">http://www.divcss5.com/wenji/w194.shtml</a> 只有ie6不支持 ie7都支持..</li>
+</ul>
+</blockquote>
+</li>
+<li>8、浮动元素的双边距问题<blockquote>
+<p>问题描述：IE6下，元素在浮动后，又有横向的margin，此时，该元素的外边距是其值的2倍。<br>  解决办法：声明display:block</p>
+</blockquote>
+</li>
+<li>9、IE6的微型盒子<blockquote>
+<p>问题描述：IE6下无法设置低于14px高，原因是由其默认行高引起的<br>  解决办法：声明：overflow:hidden;或者line-height:1px;</p>
+</blockquote>
+</li>
+<li>10、Margin-top问题<blockquote>
+<p>问题描述：如果给子元素设置margin-top，则父元素也会下来，从而子元素与父元素之间的间距并不能改        变。<br>  解决办法：1、父元素：overflow:hidden;</p>
+<pre><code>2、父元素：border
+</code></pre><p>   3、子元素：float:left</p>
+</blockquote>
+</li>
+<li>11、margin 0 auto居中问题<blockquote>
+<p>问题描述：IE6下在使用margin:0 auto;无法使其居中。<br>  解决办法：为其父容器设置text-align:center</p>
+</blockquote>
+</li>
+<li>12、Margin重叠问题。合并/塌陷问题<blockquote>
+<p>问题描述：两个或多个毗邻的普通流中的块元素垂直方向上的margin会重叠。并取最大值。<br>  解决办法：使用同一侧margin或使用padding</p>
+</blockquote>
+</li>
+</ul>
 
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2015/07/21/兼容代码/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2015/08/20/IE6CSS兼容性问题的处理/">IE6CSS兼容性问题的处理</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">panda</a></p>
+        <p><span>Created:</span>2015-08-20, 09:47:08</p>
+        <p><span>Updated:</span>2017-07-23, 10:31:49</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2015/08/20/IE6CSS兼容性问题的处理/" title="IE6CSS兼容性问题的处理">http://yoursite.com/2015/08/20/IE6CSS兼容性问题的处理/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2015/08/20/IE6CSS兼容性问题的处理/　　By panda" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/07/21/兼容代码/">
+                    解决简单的浏览器兼容问题 
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#主要是基于IE6CSS样式的兼容和解决"><span class="toc-number">1.</span> <span class="toc-text">主要是基于IE6CSS样式的兼容和解决</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"IE6CSS兼容性问题的处理　| panda的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -394,9 +444,33 @@
 
 
 
+    
 
-  
-  
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/07/21/兼容代码/" title="Next: 解决简单的浏览器兼容问题 ">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2015/08/20/IE6CSS兼容性问题的处理/">IE6CSS兼容性问题的处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/21/兼容代码/">解决简单的浏览器兼容问题 </a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

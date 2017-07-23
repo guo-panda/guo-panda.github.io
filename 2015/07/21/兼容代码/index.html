@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="panda的博客">
 <meta property="og:description" content="原生js兼容性 基本上好用的DOM操作或者语法 IE低版本浏览器都不兼容，作为前端最苦逼的就是解决各种浏览器的兼容问题，鉴于IE浏览器很严谨，    很强大，在这分享几个常用的处理兼容性的方法">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-07-21T12:16:48.946Z">
+<meta property="og:updated_time" content="2017-07-23T02:24:27.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决简单的浏览器兼容问题 ">
 <meta name="twitter:description" content="原生js兼容性 基本上好用的DOM操作或者语法 IE低版本浏览器都不兼容，作为前端最苦逼的就是解决各种浏览器的兼容问题，鉴于IE浏览器很严谨，    很强大，在这分享几个常用的处理兼容性的方法">
@@ -48,7 +48,7 @@
 
 
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-minimal.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -98,7 +98,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/img/panda.jpg" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">panda</a></h1>
@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IECSS兼容处理/">IECSS兼容处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/兼容性/">兼容性</a></li></ul>
                     </div>
                 </section>
                 
@@ -225,7 +225,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/img/panda.jpg" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">panda</a></h1>
@@ -314,48 +314,20 @@ tag.innerText!==undefined?tag.innerText=txtVal:tag.textContent=txtVal;
 </code></pre>  }else {<pre><code>//获取操作
 return tag.innerText!=undefined?tag.innerText:tag.textContent;
 </code></pre>  }<br>}</li>
-<li>获取样式<br>兼容写法，<br>function style(tag,datas) {<br>  if(datas!==undefined){<pre><code>var style=tag.style;
-for(var k in datas){
-    if(typeof  datas[k]){
-        style[k]=datas[k]();
-    }else{
-        style[k]=datas[k];
-    }
-}
-</code></pre>  }else {<pre><code>//获取 必须有返回值
-return tag.currentStyle?tag.currentStyle:getComputedStyle(tag,null);
-</code></pre>  }<br>}</li>
-<li>获取用户选择的内容<br>兼容写法， tag.currentStyle?tag.currentStyle:getComputeStyle(tag,null);</li>
-<li>封装通过类名获取DOM节点<br>function getClass(classname,tag) {<br>  //第一步先判断 是不是有没有限定的 标签,如果有 就进行判断<br>  //一旦没有限定的标签就返回 document；如果有就返回他自己<br>  //var tag=tag||document.body;//用 的是 短路操作<br>  //用三元运算符也可以<br>  tag?tag:tag=document.body;<br>  //第二步判断是不支持类名操作<br>  if(document.getElementsByClassName){//getElementsByClassName 可以理解为对象的一个方法 如果支持属性就返回一个 函数<pre><code>// 如果不支持就返回 undefined 正好和布尔值相应 所以可用来判断
-//如果支持
-return tag.getElementsByClassName(classname);
-</code></pre>  }else {<pre><code>//如果不支持
-var arr=[];var tempsarr ,temps;
-//获取所有tag标签里面的所有标签 然后进行遍历 分割
-var tags=tag.getElementsByTagName(&quot;*&quot;);
-for (var i = 0; i &lt; tags.length; i++) {
-    temps=tags[i].className;
-    //为了优化代码 判断tempsarr 是不是有类名 如果没有则不进行下一步 如果有就分割 遍历 判断是不和我们需要的相等
-    if(temps){  //类名是字符串如果是空 则表示是假 就不进行操作；其余为真
-        tempsarr=temps.split(&quot; &quot;)//通过split进行吧字符串转换成数组
-        //遍历所有的 tempsarr里的所有元素，然后比对
-        for (var j = 0; j &lt; tempsarr.length; j++) {
-          //判断是不是我们所需的
-            if(tempsarr[j]==classname){
-                arr[arr.length]=tags[i]//我们需要获取的是有这个类名的标签；而不类名 我们操作也是标签
-                break;
-            }
-        }
-</code></pre></li>
+<li>获取样式js<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt; 兼容写法</div><div class="line">function style(tag,datas) &#123;</div><div class="line">    if(datas!==undefined)&#123;</div><div class="line">        var style=tag.style;</div><div class="line">        for(var k in datas)&#123;</div><div class="line">            if(typeof  datas[k])&#123;</div><div class="line">                style[k]=datas[k]();</div><div class="line">            &#125;else&#123;</div><div class="line">                style[k]=datas[k];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;else &#123;</div><div class="line">        //获取 必须有返回值</div><div class="line">        return tag.currentStyle?tag.currentStyle:getComputedStyle(tag,null);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </blockquote>
-<pre><code>        }
-    }
-    return arr//返回一个数组 
-}
-</code></pre><p>}</p>
 <ul>
-<li>获取除自己以外的兄弟<blockquote>
+<li>获取用户选择的内容<blockquote>
+<p>兼容写法， tag.currentStyle?tag.currentStyle:getComputeStyle(tag,null);</p>
+</blockquote>
+</li>
+<li><p>封装通过类名获取DOM节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">getClass</span>(<span class="params">classname,tag</span>) </span>&#123;</div><div class="line">    <span class="comment">//第一步先判断 是不是有没有限定的 标签,如果有 就进行判断</span></div><div class="line">    <span class="comment">//一旦没有限定的标签就返回 document；如果有就返回他自己</span></div><div class="line">    <span class="comment">//var tag=tag||document.body;//用 的是 短路操作</span></div><div class="line">    <span class="comment">//用三元运算符也可以</span></div><div class="line">    tag?tag:tag=<span class="built_in">document</span>.body;</div><div class="line">    <span class="comment">//第二步判断是不支持类名操作</span></div><div class="line">    <span class="keyword">if</span>(<span class="built_in">document</span>.getElementsByClassName)&#123;<span class="comment">//getElementsByClassName 可以理解为对象的一个方法 如果支持属性就返回一个 函数</span></div><div class="line">        <span class="comment">// 如果不支持就返回 undefined 正好和布尔值相应 所以可用来判断</span></div><div class="line">        <span class="comment">//如果支持</span></div><div class="line">        <span class="keyword">return</span> tag.getElementsByClassName(classname);</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//如果不支持</span></div><div class="line">        <span class="keyword">var</span> arr=[];<span class="keyword">var</span> tempsarr ,temps;</div><div class="line">        <span class="comment">//获取所有tag标签里面的所有标签 然后进行遍历 分割</span></div><div class="line">        <span class="keyword">var</span> tags=tag.getElementsByTagName(<span class="string">"*"</span>);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; tags.length; i++) &#123;</div><div class="line">            temps=tags[i].className;</div><div class="line">            <span class="comment">//为了优化代码 判断tempsarr 是不是有类名 如果没有则不进行下一步 如果有就分割 遍历 判断是不和我们需要的相等</span></div><div class="line">            <span class="keyword">if</span>(temps)&#123;  <span class="comment">//类名是字符串如果是空 则表示是假 就不进行操作；其余为真</span></div><div class="line">                tempsarr=temps.split(<span class="string">" "</span>)<span class="comment">//通过split进行吧字符串转换成数组</span></div><div class="line">                <span class="comment">//遍历所有的 tempsarr里的所有元素，然后比对</span></div><div class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; tempsarr.length; j++) &#123;</div><div class="line">                  <span class="comment">//判断是不是我们所需的</span></div><div class="line">                    <span class="keyword">if</span>(tempsarr[j]==classname)&#123;</div><div class="line">                        arr[arr.length]=tags[i]<span class="comment">//我们需要获取的是有这个类名的标签；而不类名 我们操作也是标签</span></div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> arr<span class="comment">//返回一个数组 </span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取除自己以外的兄弟</p>
+<blockquote>
 <p>function getSib(tag) {<br>  var arr=[];<br>  var tags=tag.parentNode.children;<br>  for (var i = 0; i &lt; tags.length; i++) {</p>
 <pre><code>if(tags[i]!=tag){
     arr[arr.length]=tags[i]
@@ -375,59 +347,14 @@ for (var i = 0; i &lt; tags.length; i++) {
 </code></pre><p>  }<br>  return up;<br>}</p>
 </blockquote>
 </li>
-<li>封装的是鼠标在页面的坐标 page  以及滚动<blockquote>
-<p>var eventTools={<br>  //检测 参数对象<br>  getEvent:function (e) {</p>
-<pre><code>return window.event?window.event:event;
-</code></pre><p>  },<br>  //检测可视区域的坐标<br>  getClientX:function (e) {</p>
-<pre><code>return this.getEvent(e).clientX;
-</code></pre><p>  },<br>  getClientY:function (e) {</p>
-<pre><code>return   this.getEvent(e).clientY;
-</code></pre><p>  },<br>  //检测滚动<br>  getScrollLeft:function () {</p>
-<pre><code>return window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft||0;
-</code></pre><p>  },<br>  getScrollTop:function () {</p>
-<pre><code>return window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop||0;
-</code></pre><p>  },<br>  //用page去检测鼠标跟随 //page和client都是事件对象的里面的属性<br>  getPageX:function (e) {</p>
-<pre><code>return this.getEvent(e).pageX?this.getEvent(e).pageX:this.getScrollLeft()+this.getClientX(e);
-</code></pre><p>  },<br>  getPageY:function (e) {</p>
-<pre><code>return this.getEvent(e).pageY?this.getEvent(e).pageY:this.getScrollTop()+this.getClientY(e);
-</code></pre><p>  }<br>}</p>
-</blockquote>
+<li><p>封装的是鼠标在页面的坐标 page  以及滚动</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> eventTools=&#123;</div><div class="line">    <span class="comment">//检测 参数对象</span></div><div class="line">    getEvent:<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">window</span>.event?<span class="built_in">window</span>.event:event;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//检测可视区域的坐标</span></div><div class="line">    getClientX:<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.getEvent(e).clientX;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getClientY</span>:<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span>   <span class="keyword">this</span>.getEvent(e).clientY;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//检测滚动</span></div><div class="line">    getScrollLeft:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">window</span>.pageXOffset||<span class="built_in">document</span>.body.scrollLeft||<span class="built_in">document</span>.documentElement.scrollLeft||<span class="number">0</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getScrollTop</span>:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">window</span>.pageYOffset||<span class="built_in">document</span>.body.scrollTop||<span class="built_in">document</span>.documentElement.scrollTop||<span class="number">0</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//用page去检测鼠标跟随 //page和client都是事件对象的里面的属性</span></div><div class="line">    getPageX:<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.getEvent(e).pageX?<span class="keyword">this</span>.getEvent(e).pageX:<span class="keyword">this</span>.getScrollLeft()+<span class="keyword">this</span>.getClientX(e);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">getPageY</span>:<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.getEvent(e).pageY?<span class="keyword">this</span>.getEvent(e).pageY:<span class="keyword">this</span>.getScrollTop()+<span class="keyword">this</span>.getClientY(e);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li>缓速运动的封装<blockquote>
-<p>function animate(tag,json,fn) {<br>  clearInterval(tag.timer);<br>  tag.timer=setInterval(function () {</p>
-<pre><code>var flag=true;
-for(var attr in json){
-    if(attr==&quot;opacity&quot;){
-        var leader=getStyle(tag,attr)*100;
-        var target=json[attr]*100;
-        var step=(target-leader)/10;
-        step=target&gt;leader?Math.ceil(step):Math.floor(step);
-        leader+=step;
-        tag.style[attr]=leader/100;
-    }else if(attr==&quot;zIndex&quot;){
-        tag.style[attr]=json[attr];
-    }else {
-        var leader=parseInt(getStyle(tag,attr));
-        var target=json[attr];
-        var step=(target-leader)/10;
-        step=target&gt;leader?Math.ceil(step):Math.floor(step);
-        leader+=step;
-        tag.style[attr]=leader+&quot;px&quot;;
-    }
-    if(leader!=target){
-        flag=false;
-    };
-}
-if(flag){
-    clearInterval(tag.timer);
-    if(fn){
-        fn();
-    }
-}
-</code></pre><p>  },20)<br>}</p>
-</blockquote>
+<li><p>缓速运动的封装</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">tag,json,fn</span>) </span>&#123;</div><div class="line">    clearInterval(tag.timer);</div><div class="line">    tag.timer=setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> flag=<span class="literal">true</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> json)&#123;</div><div class="line">            <span class="keyword">if</span>(attr==<span class="string">"opacity"</span>)&#123;</div><div class="line">                <span class="keyword">var</span> leader=getStyle(tag,attr)*<span class="number">100</span>;</div><div class="line">                <span class="keyword">var</span> target=json[attr]*<span class="number">100</span>;</div><div class="line">                <span class="keyword">var</span> step=(target-leader)/<span class="number">10</span>;</div><div class="line">                step=target&gt;leader?<span class="built_in">Math</span>.ceil(step):<span class="built_in">Math</span>.floor(step);</div><div class="line">                leader+=step;</div><div class="line">                tag.style[attr]=leader/<span class="number">100</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(attr==<span class="string">"zIndex"</span>)&#123;</div><div class="line">                tag.style[attr]=json[attr];</div><div class="line">            &#125;<span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">var</span> leader=<span class="built_in">parseInt</span>(getStyle(tag,attr));</div><div class="line">                <span class="keyword">var</span> target=json[attr];</div><div class="line">                <span class="keyword">var</span> step=(target-leader)/<span class="number">10</span>;</div><div class="line">                step=target&gt;leader?<span class="built_in">Math</span>.ceil(step):<span class="built_in">Math</span>.floor(step);</div><div class="line">                leader+=step;</div><div class="line">                tag.style[attr]=leader+<span class="string">"px"</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(leader!=target)&#123;</div><div class="line">                flag=<span class="literal">false</span>;</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(flag)&#123;</div><div class="line">            clearInterval(tag.timer);</div><div class="line">            <span class="keyword">if</span>(fn)&#123;</div><div class="line">                fn();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,<span class="number">20</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li>监听滚动<blockquote>
+<li><p>监听滚动</p>
+<blockquote>
 <p>function getScroll() {<br>  return{</p>
 <pre><code>left:window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft||0,
 top:window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop||0,
@@ -450,7 +377,7 @@ top:window.pageYOffset||document.body.scrollTop||document.documentElement.scroll
         <p><span>Title:</span><a href="/2015/07/21/兼容代码/">解决简单的浏览器兼容问题 </a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">panda</a></p>
         <p><span>Created:</span>2015-07-21, 19:42:01</p>
-        <p><span>Updated:</span>2017-07-21, 20:16:48</p>
+        <p><span>Updated:</span>2017-07-23, 10:24:27</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2015/07/21/兼容代码/" title="解决简单的浏览器兼容问题 ">http://yoursite.com/2015/07/21/兼容代码/</a>
             <span class="copy-path" data-clipboard-text="From http://yoursite.com/2015/07/21/兼容代码/　　By panda" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -462,6 +389,17 @@ top:window.pageYOffset||document.body.scrollTop||document.documentElement.scroll
     </div>
 
 
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2015/08/20/IE6CSS兼容性问题的处理/">
+                    IE6CSS兼容性问题的处理
+                </a>
+            </div>
+        
+        
+    </nav>
 
   
 </article>
@@ -525,7 +463,9 @@ top:window.pageYOffset||document.body.scrollTop||document.documentElement.scroll
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/2015/08/20/IE6CSS兼容性问题的处理/" title="Pre: IE6CSS兼容性问题的处理">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -535,7 +475,7 @@ top:window.pageYOffset||document.body.scrollTop||document.documentElement.scroll
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2015/07/21/兼容代码/">解决简单的浏览器兼容问题 </a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2015/08/20/IE6CSS兼容性问题的处理/">IE6CSS兼容性问题的处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/21/兼容代码/">解决简单的浏览器兼容问题 </a></li></ul>
 
 
 
